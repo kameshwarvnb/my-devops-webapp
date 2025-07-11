@@ -30,6 +30,9 @@ ACR_PASSWORD=$(az acr credential show --name $ACR_NAME --query passwords[0].valu
 
 # Create service principal with contributor role for the resource group
 echo "Creating service principal..."
+
+echo "Scope being used: /subscriptions/$(az account show --query id --output tsv)/resourceGroups/$RESOURCE_GROUP_NAME"
+
 AZURE_CREDENTIALS=$(az ad sp create-for-rbac \
   --name $SP_NAME \
   --role contributor \
