@@ -22,7 +22,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: ./azure/project-2-cicd-pipeline  
+        working-directory: ./azure 
     
     steps:
     - name: Checkout code
